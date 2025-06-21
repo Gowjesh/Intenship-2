@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title id="title">My Website</title>
+</head>
+<body>
+
+  <h1 id="greeting">Hello, how are you?</h1>
+
+  <select id="language-select">
+    <option value="en">English</option>
+    <option value="hi">हिन्दी</option>
+  </select>
+
+  <script>
+    const translations = {
+      en: {
+        title: "My Website",
+        greeting: "Hello, how are you?"
+      },
+      hi: {
+        title: "मेरा वेबसाइट",
+        greeting: "नमस्ते, आप कैसे हैं?"
+      }
+    };
+
+    const langSelect = document.getElementById("language-select");
+    langSelect.addEventListener("change", function () {
+      const lang = this.value;
+      document.getElementById("title").innerText = translations[lang].title;
+      document.getElementById("greeting").innerText = translations[lang].greeting;
+    });
+  </script>
+
+</body>
+</html>

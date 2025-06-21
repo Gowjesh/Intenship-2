@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="container">
+  <h2>Task List</h2>
+</div>
+
+<button onclick="addTask()">Add Task</button>
+<button onclick="removeTask()">Remove Task</button>
+
+<script>
+  let task; // global reference
+
+  function addTask() {
+    task = document.createElement("h1");
+    task.textContent = "✅ New Task";
+    document.getElementById("container").appendChild(task);
+  }
+
+  function removeTask() {
+    if (task) {
+      document.getElementById("container").removeChild(task);
+      task = null; // clear reference
+    }
+  }
+</script>
+
+</body>
+</html>
